@@ -9,7 +9,7 @@ module.exports = {
           title: "About Lighting and the skies",
           description:
             "Take a good look at these paintings and the way the artist made use of light to create the sky and the surroundings",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#DAF5FF",
           color: "#00000",
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -18,7 +18,7 @@ module.exports = {
         {
           title: "Still lifes I adore",
           description: "Like the world is standing still for a moment.",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#8B9D83",
           color: "#000000",
           createdAt: new Date(),
           updatedAt: new Date(),

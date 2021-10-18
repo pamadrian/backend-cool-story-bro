@@ -18,16 +18,54 @@
 
 ## SET UP BACK END
 
-1. SET UP DB URL ## DONE
-2. RUN NPM I ## DONE
-3. CREATE MODELS FOR SPACE & STORY ## DONE
-4. SET UP MIGRATIONS FOR SPACE & STORY ## DONE
-5. DO DATABASE VALIDATIONS USING THE SEQUELIZE MODELS ## DONE
+1. SET UP DB URL
+
+# DONE
+
+2. RUN NPM I
+
+# DONE
+
+3. CREATE MODELS FOR SPACE & STORY
+
+# DONE
+
+4. SET UP MIGRATIONS FOR SPACE & STORY
+
+# DONE
+
+5. DO DATABASE VALIDATIONS USING THE SEQUELIZE MODELS
+
+# DONE
+
 6. SET UP RELATIONS:
-   space belongs to user - > user has one space ## DONE
-   story belongs to space - > space has many stories ## DONE
+   space belongs to user - > user has one space
+   # DONE
+   story belongs to space - > space has many stories
+   # DONE
 7. ADD SEEDS (at least 2 spaces and 4 stories)
+
+# DONE
+
 8. TRY OUT QUERIES
+
+# DONE
+
+## FEATURE 1
+
+1. FRONTEND ROUTE '/' DISPLAYS A LIST OF SPACES
+
+- Set up a GET - /spaces route that returns all spaces
+- Test it! via browser or via httpie.
+
+# DONE
+
+2. SPACES HAVE A BACKGROUND COLOR
+
+# DONE
+
+3. DATA IS MANAGED USING REDUX
+4. EACH SPACE HAS A VISIT SPACE BUTTON, IT LINKS TO A SPACE'S DETAILS.
 
 #### Frontend
 
