@@ -18,14 +18,16 @@
 
 ## SET UP BACK END
 
-1. CREATE MODELS FOR SPACE & STORY
-2. SET UP MIGRATIONS FOR SPACE & STORY
-3. DO DATABASE VALIDATIONS USING THE SEQUELIZE MODELS
-4. SET UP RELATIONS:
+1. SET UP DB URL ## DONE
+2. RUN NPM I ## DONE
+3. CREATE MODELS FOR SPACE & STORY
+4. SET UP MIGRATIONS FOR SPACE & STORY
+5. DO DATABASE VALIDATIONS USING THE SEQUELIZE MODELS
+6. SET UP RELATIONS:
    space belongs to user - > user has one space
    story belongs to space - > space has many stories
-5. ADD SEEDS (at least 2 spaces and 4 stories)
-6. TRY OUT QUERIES
+7. ADD SEEDS (at least 2 spaces and 4 stories)
+8. TRY OUT QUERIES
 
 #### Frontend
 
