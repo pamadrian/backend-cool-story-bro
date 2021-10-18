@@ -8,7 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Space.hasMany(models.Story);
+      Space.hasMany(models.Story, {
+        foreignKey: "spaceId",
+      });
+      Space.belongsTo(models.user);
     }
   }
   Space.init(
@@ -26,10 +29,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       updatedAt: {
         type: new Date(),
-        allowNull: false,
-      },
-      userId: {
-        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
