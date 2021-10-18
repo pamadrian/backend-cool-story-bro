@@ -8,18 +8,30 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Space.hasMany(models.Story);
     }
   }
   Space.init(
     {
-      title: { type: DataTypes.STRING, allowNull: false },
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       description: DataTypes.TEXT,
       backgroundColor: DataTypes.STRING,
       color: DataTypes.STRING,
-      createdAt: { type: new Date(), allowNull: false },
-      updatedAt: { type: new Date(), allowNull: false },
-      userId: { type: DataTypes.INTEGER, allowNull: false },
+      createdAt: {
+        type: new Date(),
+        allowNull: false,
+      },
+      updatedAt: {
+        type: new Date(),
+        allowNull: false,
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {
       sequelize,

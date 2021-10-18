@@ -8,17 +8,25 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Story.belongsTo(models.Space);
     }
   }
   Story.init(
     {
-      name: { type: DataTypes.STRING, allowNull: false },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
       content: DataTypes.TEXT,
       imageUrl: DataTypes.STRING,
-      createdAt: { type: new Date(), allowNull: false },
-      updatedAt: { type: new Date(), allowNull: false },
-      spaceId: { type: DataTypes.INTEGER, allowNull: false },
+      createdAt: {
+        type: new Date(),
+        allowNull: false,
+      },
+      updatedAt: {
+        type: new Date(),
+        allowNull: false,
+      },
     },
     {
       sequelize,
