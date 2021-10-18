@@ -19,14 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       content: DataTypes.TEXT,
       imageUrl: DataTypes.STRING,
-      createdAt: {
-        type: new Date(),
-        allowNull: false,
-      },
-      updatedAt: {
-        type: new Date(),
-        allowNull: false,
-      },
+      spaceId: DataTypes.INTEGER,
     },
     {
       sequelize,

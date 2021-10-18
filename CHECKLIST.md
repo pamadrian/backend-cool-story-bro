@@ -22,10 +22,10 @@
 2. RUN NPM I ## DONE
 3. CREATE MODELS FOR SPACE & STORY ## DONE
 4. SET UP MIGRATIONS FOR SPACE & STORY ## DONE
-5. DO DATABASE VALIDATIONS USING THE SEQUELIZE MODELS
+5. DO DATABASE VALIDATIONS USING THE SEQUELIZE MODELS ## DONE
 6. SET UP RELATIONS:
-   space belongs to user - > user has one space
-   story belongs to space - > space has many stories
+   space belongs to user - > user has one space ## DONE
+   story belongs to space - > space has many stories ## DONE
 7. ADD SEEDS (at least 2 spaces and 4 stories)
 8. TRY OUT QUERIES
 

@@ -23,14 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.TEXT,
       backgroundColor: DataTypes.STRING,
       color: DataTypes.STRING,
-      createdAt: {
-        type: new Date(),
-        allowNull: false,
-      },
-      updatedAt: {
-        type: new Date(),
-        allowNull: false,
-      },
+      userId: DataTypes.INTEGER,
     },
     {
       sequelize,
