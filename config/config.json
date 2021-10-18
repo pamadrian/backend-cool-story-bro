@@ -1,6 +1,6 @@
 {
   "development": {
-    "url": "YOUR_ELEPHANTSQL_URL_HERE",
+    "url": "postgres://cbwizemu:QRHj_HGkzDmO438tqfI7utnuOk2KEbGJ@hattie.db.elephantsql.com/cbwizemu",
     "dialect": "postgres",
     "operatorsAliases": "0"
   },
