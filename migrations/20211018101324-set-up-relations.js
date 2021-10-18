@@ -2,20 +2,20 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn("Stories", "spaceId", {
+    await queryInterface.addColumn("stories", "spaceId", {
       type: Sequelize.INTEGER,
       references: {
-        model: "Spaces",
+        model: "spaces",
         key: "id",
       },
 
       onUpdate: "CASCADE",
       onDelete: "SET NULL",
     });
-    await queryInterface.addColumn("Spaces", "userId", {
+    await queryInterface.addColumn("spaces", "userId", {
       type: Sequelize.INTEGER,
       references: {
-        model: "Spaces",
+        model: "spaces",
         key: "id",
       },
       onUpdate: "CASCADE",
@@ -24,7 +24,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.removeColumn("Stories", "spaceId");
-    await queryInterface.removeColumn("Spaces", "userId");
+    await queryInterface.removeColumn("stories", "spaceId");
+    await queryInterface.removeColumn("spaces", "userId");
   },
 };

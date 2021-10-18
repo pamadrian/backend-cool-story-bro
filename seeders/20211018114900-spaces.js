@@ -3,7 +3,7 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert(
-      "Spaces",
+      "spaces",
       [
         {
           title: "About Lighting and the skies",
@@ -30,6 +30,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete("Spaces", null, {});
+    await queryInterface.bulkDelete("spaces", null, {});
   },
 };
