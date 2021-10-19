@@ -16,7 +16,7 @@ module.exports = {
           userId: 2,
         },
         {
-          title: "Still lifes I adore",
+          title: "Still lifes",
           description: "Like the world is standing still for a moment.",
           backgroundColor: "#8B9D83",
           color: "#000000",
