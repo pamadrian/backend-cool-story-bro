@@ -19,7 +19,7 @@ module.exports = {
           name: "What I like most about Rembrandt's 'Bileam en zijn ezelin' painting",
           content: "The lighting is so on point, it looks angelic",
           imageUrl:
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Fnl.wikipedia.org%2Fwiki%2FBileam&psig=AOvVaw0-TfGWyVx9xUICnUovyJua&ust=1634644149016000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCOjByZDy0_MCFQAAAAAdAAAAABAD",
+            "https://commons.wikimedia.org/wiki/File:P1150002_Cognacq-Jay_Rembrandt_anesse_de_Balaam_rwk.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
           spaceId: 1,

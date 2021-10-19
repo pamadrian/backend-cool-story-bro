@@ -128,7 +128,9 @@ app.use("/", authRouter);
 
 // Listen for connections on specified port (default is port 4000)
 
-app.get("/spaces", spacesRouter);
+app.use("/spaces", spacesRouter);
+
+// APP USE!!!
 
 app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);

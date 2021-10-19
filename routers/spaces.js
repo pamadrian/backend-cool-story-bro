@@ -1,9 +1,10 @@
 const { Router } = require("express");
 const Space = require("../models").space;
+const Story = require("../models").story;
 
 const router = new Router();
 
-router.get("/spaces", async (req, res, next) => {
+router.get("/", async (req, res, next) => {
   try {
     const spaces = await Space.findAll();
     res.json(spaces);
@@ -12,11 +13,14 @@ router.get("/spaces", async (req, res, next) => {
   }
 });
 
-router.get("/spaces/:id", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   try {
-    const spacesdetails = await Space.findByPk();
-    res.json(spacesdetails);
-    console.log(spacesdetails);
+    const id = req.params.id;
+    const spaceDetails = await Space.findByPk(id, {
+      include: { model: Story },
+    });
+    res.json(spaceDetails);
+    console.log(spaceDetails);
   } catch (e) {
     next(e);
   }
