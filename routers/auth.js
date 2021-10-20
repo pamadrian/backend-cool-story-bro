@@ -51,15 +51,17 @@ router.post("/signup", async (req, res) => {
     delete newUser.dataValues["password"]; // don't send back the password hash
 
     const token = toJWT({ userId: newUser.id });
-    res.status(201).json({ token, ...newUser.dataValues });
+    console.log("==GETTING HERE?==", newUser.id);
+
     const space = await Space.create({
-      // added for creating new space
       title: `${newUser.name}'s space`,
       userId: newUser.id,
       description: null,
       backgroundColor: "#ffffff",
       color: "#000000",
     });
+
+    console.log("space????", space);
 
     res.status(201).json({
       token,
