@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const Space = require("../models").space;
-const Story = require("../models").story;
 
 const router = new Router();
 
