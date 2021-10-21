@@ -4,6 +4,7 @@ const { toJWT } = require("../auth/jwt");
 const authMiddleware = require("../auth/middleware");
 const User = require("../models/").user;
 const Space = require("../models/").space;
+const Story = require("../models/").story;
 const { SALT_ROUNDS } = require("../config/constants");
 
 const router = new Router();
@@ -19,9 +20,10 @@ router.post("/login", async (req, res, next) => {
     }
 
     // added include model: Space
+    // need a second include because I include the story into the space, not in the user part
     const user = await User.findOne({
       where: { email },
-      include: { model: Space },
+      include: { model: Space, include: { model: Story } },
     });
     console.log(user.dataValues);
 
@@ -104,8 +106,14 @@ router.post("/signup", async (req, res) => {
 // - checking if a token is (still) valid
 router.get("/me", authMiddleware, async (req, res) => {
   // don't send back the password hash
+  // I need the space & stories
+  const space = await Space.findOne({
+    where: { userId: req.user.id },
+    include: { model: Story },
+  });
+  console.log("SPACE???", space);
   delete req.user.dataValues["password"];
-  res.status(200).send({ ...req.user.dataValues });
+  res.status(200).send({ ...req.user.dataValues, space: space });
 });
 
 module.exports = router;
