@@ -18,7 +18,12 @@ router.post("/login", async (req, res, next) => {
         .send({ message: "Please provide both email and password" });
     }
 
-    const user = await User.findOne({ where: { email } });
+    // added include model: Space
+    const user = await User.findOne({
+      where: { email },
+      include: { model: Space },
+    });
+    console.log(user.dataValues);
 
     if (!user || !bcrypt.compareSync(password, user.password)) {
       return res.status(400).send({
@@ -29,6 +34,18 @@ router.post("/login", async (req, res, next) => {
     delete user.dataValues["password"]; // don't send back the password hash
     const token = toJWT({ userId: user.id });
     return res.status(200).send({ token, ...user.dataValues });
+    // added space: { ...user.space.dataValues }
+    // want:
+    // {
+    // token: string => token
+    // id: number => user.dataValues
+    // email: string => user.dataValues
+    // name: string => user.dataValues
+    // space: {} => user.space.dataValues
+    // }
+    // token,
+    // {...user.dataValues} (id: number, name: string, email: string),
+    // space:{...user.space.dataValues}
   } catch (error) {
     console.log(error);
     return res.status(400).send({ message: "Something went wrong, sorry" });
