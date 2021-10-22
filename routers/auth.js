@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const { Router } = require("express");
 const { toJWT } = require("../auth/jwt");
 const authMiddleware = require("../auth/middleware");
+const auth = require("../auth/middleware");
 const User = require("../models/").user;
 const Space = require("../models/").space;
 const Story = require("../models/").story;
@@ -129,6 +130,43 @@ router.delete("/stories/:storyId", async (req, res, next) => {
       res.send("story is succesfully deleted");
     }
   } catch (e) {
+    next(e);
+  }
+});
+
+// Create story
+// auth,
+router.post("/:id/stories", auth, async (req, res) => {
+  try {
+    const space = await Space.findByPk(req.params.id);
+    console.log(space);
+
+    if (space === null) {
+      return res.status(404).send({ message: "This space does not exist" });
+    }
+
+    if (!space.userId === req.user.id) {
+      return res
+        .status(403)
+        .send({ message: "You are not authorized to update this space" });
+    }
+
+    const { name, imageUrl, content } = req.body;
+
+    if (!name) {
+      return res.status(400).send({ message: "A story must have a name" });
+    }
+
+    const story = await Story.create({
+      name,
+      imageUrl,
+      content,
+      spaceId: space.id,
+    });
+
+    return res.status(201).send({ message: "Story created", story });
+  } catch (e) {
+    console.log("ERROOOR???", e);
     next(e);
   }
 });
